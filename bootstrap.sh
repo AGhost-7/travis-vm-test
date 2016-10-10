@@ -4,10 +4,9 @@ echo 'deb https://apt.dockerproject.org/repo ubuntu-trusty main' | sudo tee /etc
 sudo apt-get update
 sudo apt-get install docker-engine python-dev python-pip -y
 sudo pip install docker-compose
-
-# installer already adds the docker group, just need to add current user to group
 sudo usermod -aG docker $USER
 sudo service docker restart
+
 sudo fallocate -l 2000M /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
