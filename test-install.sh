@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-#!/usr/bin/env bash
 
-cat /proc/swaps
-
-docker pull ubuntu:trusty
-docker run --rm ubuntu:trusty echo 'hello world!'
+vagrant ssh -c 'cat /proc/swaps'
+vagrant ssh -c 'docker pull ubuntu:trusty'
+vagrant ssh -c 'docker run --rm ubuntu:trusty echo "hello world!"'
